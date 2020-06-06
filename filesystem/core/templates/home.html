@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Documents</h2>
+<table class="table">
+<thead>
+<th>Description</th>
+<th>Document</th>
+<th>Upload Time</th>
+</thead>
+<tbody>
+{% for d in documents %}
+<tr>
+<td>{{ d.description }}</td>
+<td><a href="{{ d.document.url }}" target="_blank">Check Document</a></td>
+<td>{{ d.uploaded_at }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock content %}
